@@ -1,1 +1,1 @@
-# project1 - Custom Project for Self Practice ( MERN STACK )
+# project1: Custom Project for Self Practice (MERN STACK)
