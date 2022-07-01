@@ -3,6 +3,7 @@ import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import LandingPage from '../landingPage/LandingPage';
 import CreatePage from '../createPage/CreatePage';
+import ShowList from '../showList/ShowList';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
@@ -19,6 +20,11 @@ function MainNavigator() {
         <Stack.Screen
           name="Create Task"
           component={CreatePage}
+          options={{headerBackTitleVisible: false}}
+        />
+         <Stack.Screen
+          name="ShowList"
+          component={ShowList}
           options={{headerBackTitleVisible: false}}
         />
       </Stack.Navigator>

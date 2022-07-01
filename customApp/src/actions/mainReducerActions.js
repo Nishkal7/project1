@@ -3,6 +3,10 @@ export const setup = data => async dispatch => {
     try {
       dispatch({type: 'SETUP', payload: data});
     } catch (error) {
-      dispatch({type: 'SETUP', payload: null});
+      dispatch({type: 'SETUP', payload: {}});
     }
+  };
+
+  export const deleteTasks = () => async dispatch => {
+    dispatch({type: 'DELETE', payload: {}});
   };

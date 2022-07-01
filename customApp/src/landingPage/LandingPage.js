@@ -1,21 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, SafeAreaView, StyleSheet, Button} from 'react-native';
-import {setup} from '../actions/mainReducerActions';
+import {deleteTasks, setup} from '../actions/mainReducerActions';
 import styles from './LandingPage.style';
 import {useSelector, useDispatch} from 'react-redux';
+import {mockList} from '../helpers/mockList';
 
 const LandingPage = ({navigation}) => {
   const dispatch = useDispatch();
   const stateData = useSelector(state => state);
-  const [tasksData, setTasksData] = useState(null);
+  const [tasksData, setTasksData] = useState({});
 
   useEffect(() => {
-    dispatch(setup('CHECKING STUFF FOR NOW'));
+    dispatch(setup(mockList));
   }, []);
 
   useEffect(() => {
-    // dispatch(setup('CHECKING STUFF FOR NOW'));
-    console.log("STATE DATA", stateData)
+    console.log('STATE DATA', stateData);
     setTasksData(stateData);
   }, [tasksData]);
 
@@ -29,14 +29,14 @@ const LandingPage = ({navigation}) => {
       />
       <Button
         onPress={() => {
-          console.log('Show Tasks Created');
+          navigation.navigate('ShowList');
         }}
         title="Show My List"
       />
       <Button
         color={'red'}
         onPress={() => {
-          console.log('ALERT!!');
+          dispatch(deleteTasks());
         }}
         title="Reset Everything"
       />

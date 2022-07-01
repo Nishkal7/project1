@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {SCALE_FACTOR} from '../../helpers/ScaleFactor';
+import {SCALE_FACTOR} from '../helpers/ScaleFactor';
 
 export default StyleSheet.create({
   container: {
